@@ -24,13 +24,17 @@ public class Programa {
 		Double withDrawLimit = sc.nextDouble(); 
 		System.out.print("Enter amount for withdraw: ");
 		Double amount = sc.nextDouble(); //100.00
-		if(amount > withDrawLimit) {
-			System.out.println("Withdraw error: The amount exceeds withdraw limit");
+		Account account = new Account(number, holder, balance, withDrawLimit);
+		account.withdraw(amount);
+		if(amount < withDrawLimit) {
+			System.out.println(account);
+		}
+		/*if(amount > withDrawLimit) {
+			//System.out.println("Withdraw error: The amount exceeds withdraw limit");
 		}else {
 			Account account = new Account(number, holder, balance, withDrawLimit);
 			account.withdraw(amount);
-			System.out.println(account);
-		}
+		}*/
   	 sc.close();
 	}
 }
