@@ -15,17 +15,17 @@ public class Programa {
 		Scanner sc = new Scanner(System.in);
 		try {
 			System.out.println("Enter account data");
-			System.out.print("Number: "); // 8021
+			System.out.print("Number: "); 
 			Integer number = sc.nextInt();
 			sc.nextLine();
-			System.out.print("Holder: ");// Bob Brown
+			System.out.print("Holder: "); 
 			String holder = sc.nextLine();
-			System.out.print("Initial balance: ");// 500.00
+			System.out.print("Initial balance: "); 
 			Double balance = sc.nextDouble();
-			System.out.print("Withdraw limit: ");// 300.00
+			System.out.print("Withdraw limit: "); 
 			Double withDrawLimit = sc.nextDouble();
 			System.out.print("Enter amount for withdraw: ");
-			Double amount = sc.nextDouble(); // 100.00
+			Double amount = sc.nextDouble(); 
 			Account account = new Account(number, holder, balance, withDrawLimit);
 			account.withdraw(amount);
 			System.out.println(account);
