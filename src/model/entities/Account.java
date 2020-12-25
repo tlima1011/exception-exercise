@@ -1,5 +1,7 @@
 package model.entities;
 
+import model.exceptions.DomainException;
+
 public class Account {
 
 	// Atributos
@@ -60,9 +62,9 @@ public class Account {
 
 	public void withdraw(double amount) {
 		if (amount >= this.balance || this.balance == 0) {
-			System.out.println("Withdraw error: Not enough balance");
+			throw new DomainException("Not enough balance");
 		} else if (amount > this.withdrawLimit) {
-			System.out.println("Withdraw error: The amount exceeds withdraw limit");
+			throw new DomainException("The amount exceeds withdraw limit");
 		} else {
 			this.balance -= amount;
 		}
